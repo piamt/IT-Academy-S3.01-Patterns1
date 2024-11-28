@@ -6,7 +6,9 @@ public class MenuManager {
         boolean exit = false;
         int selectedMenuOption = -1;
 
-        UndoManager.myManager.removeAllLines();
+        UndoManager myManager = UndoManager.getInstance();
+
+        myManager.removeAllLines();
 
         do {
             try {
@@ -17,16 +19,16 @@ public class MenuManager {
 
             switch (selectedMenuOption) {
                 case 1:
-                    UndoManager.myManager.addCommandLine(Entry.readString("Introduce the command to save:"));
+                    myManager.addCommandLine(Entry.readString("Introduce the command to save:"));
                     break;
                 case 2:
-                    UndoManager.myManager.removeLastCommand();
+                    myManager.removeLastCommand();
                     break;
                 case 3:
-                    UndoManager.myManager.showHistory();
+                    myManager.showHistory();
                     break;
                 case 0:
-                    UndoManager.myManager.removeAllLines();
+                    myManager.removeAllLines();
                     exit = true;
                     break;
                 default: break;

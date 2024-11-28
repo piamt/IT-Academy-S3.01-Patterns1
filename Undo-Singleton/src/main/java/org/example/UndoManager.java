@@ -12,7 +12,13 @@ public class UndoManager {
 
     private static final String FILEPATH = "src/main/file/commands_file.txt";
 
-    public static final UndoManager myManager = new UndoManager();
+    private static final UndoManager myManager = new UndoManager();
+
+    private UndoManager() {}
+
+    public static UndoManager getInstance() {
+        return myManager;
+    }
 
     public void showHistory() {
         readTextFile();
