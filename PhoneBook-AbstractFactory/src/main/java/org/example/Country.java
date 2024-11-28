@@ -12,10 +12,7 @@ public enum Country {
         name = s;
     }
 
-    public boolean equalsName(String otherName) {
-        return name.equals(otherName);
-    }
-
+    @Override
     public String toString() {
         return this.name;
     }
